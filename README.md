@@ -1,7 +1,7 @@
 # Team Task Manager
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/Saurabh-Srivastav/team-task-manager/main.yml?branch=main)
-![License](https://img.shields.io/github/license/Saurabh-Srivastav/team-task-manager)
+![Build Status](https://img.shields.io/github/actions/workflow/status/soarbh12321/team_task_manager/ci.yml?branch=main)
+![License](https://img.shields.io/github/license/soarbh12321/team_task_manager)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
 ![Express](https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white)
