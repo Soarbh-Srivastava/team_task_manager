@@ -4,7 +4,7 @@ import { Task } from "./entities/Task";
 import { Team } from "./entities/Team";
 import { User } from "./entities/User";
 
-const databaseUrl = process.env.DATABASE_URL;
+const databaseUrl = process.env.DATABASE_URL?.trim();
 const explicitSslSetting = process.env.DB_SSL ?? process.env.DATABASE_SSL;
 const sslSetting =
   explicitSslSetting === "true"
@@ -14,6 +14,15 @@ const sslSetting =
       : databaseUrl
         ? { rejectUnauthorized: false }
         : false;
+
+  const requiredDbVars = ["DB_HOST", "DB_USERNAME", "DB_PASSWORD", "DB_PORT", "DB_NAME"] as const;
+  const missingDbVars = requiredDbVars.filter((key) => !process.env[key]);
+
+  if (!databaseUrl && missingDbVars.length > 0) {
+    throw new Error(
+      `Database environment variables are missing: ${missingDbVars.join(", ")}. Set DATABASE_URL or the DB_* variables in Railway.`,
+    );
+  }
 
 export const AppDataSource = new DataSource({
   type: "postgres",
