@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getStoredToken } from "../store/authStorage";
 
-const baseURL = "https://eloquent-adaptation-production-afb7.up.railway.app/auth/signup";
+const baseURL = "https://eloquent-adaptation-production-afb7.up.railway.app/auth/signup",
 Request Method
 POST";
 
