@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 const result = dotenv.config();
 
-if (result.error) {
+if (result.error && (result.error as NodeJS.ErrnoException).code !== "ENOENT") {
   console.log("Error loading environment variables, aborting...");
   process.exit(1);
 }
