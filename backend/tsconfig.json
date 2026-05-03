@@ -12,5 +12,6 @@
     "moduleResolution": "nodenext", // 2. Ensures TS finds packages correctly
     "resolveJsonModule": true // 3. Useful if you import config JSONs
   },
+  "exclude": ["src/**/*.test.ts"],
   "include": ["src", "callback", "connect"]
 }
