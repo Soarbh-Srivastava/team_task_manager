@@ -2,7 +2,10 @@ import "reflect-metadata";
 import dotenv from "dotenv";
 import { AppDataSource } from "../data_logger";
 
-dotenv.config();
+const result = dotenv.config();
+if (result.error && (result.error as NodeJS.ErrnoException).code !== "ENOENT") {
+  throw result.error;
+}
 
 async function main() {
   await AppDataSource.initialize();
