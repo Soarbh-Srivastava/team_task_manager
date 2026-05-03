@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getStoredToken } from "../store/authStorage";
 
-const baseURL = import.meta.env.VITE_API_BASE_URL || "http://localhost:9000";
+const baseURL = "https://eloquent-adaptation-production-afb7.up.railway.app";
 
 export const api = axios.create({
   baseURL,

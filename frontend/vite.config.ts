@@ -6,4 +6,7 @@ export default defineConfig({
   server: {
     port: 5173,
   },
+  preview: {
+    allowedHosts: ["teamtaskmanager-production-96c8.up.railway.app"],
+  },
 });

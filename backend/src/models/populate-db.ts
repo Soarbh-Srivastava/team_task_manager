@@ -8,7 +8,10 @@ import { User } from "../entities/User";
 import { Roles } from "../types/roles";
 import { hashPassword } from "../utils/auth";
 
-dotenv.config();
+const result = dotenv.config();
+if (result.error && (result.error as NodeJS.ErrnoException).code !== "ENOENT") {
+  throw result.error;
+}
 
 async function main() {
   await AppDataSource.initialize();
