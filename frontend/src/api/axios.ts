@@ -1,9 +1,7 @@
 import axios from "axios";
 import { getStoredToken } from "../store/authStorage";
 
-const baseURL = "https://eloquent-adaptation-production-afb7.up.railway.app/auth/signup",
-Request Method
-POST";
+const baseURL = "https://eloquent-adaptation-production-afb7.up.railway.app/auth/signup";
 
 export const api = axios.create({
   baseURL,
