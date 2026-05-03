@@ -28,6 +28,15 @@ const defaultAllowedOrigins = [
   "http://127.0.0.1:4173",
 ];
 
+function isRailwayOrigin(origin: string) {
+  try {
+    const url = new URL(origin);
+    return url.hostname.endsWith(".up.railway.app");
+  } catch {
+    return false;
+  }
+}
+
 function getAllowedOrigins() {
   const configuredOrigins =
     process.env.CORS_ORIGIN ?? process.env.FRONTEND_ORIGIN;
@@ -49,7 +58,7 @@ function isAllowedOrigin(origin: string | undefined) {
 
   const allowedOrigins = getAllowedOrigins();
 
-  return allowedOrigins.includes(origin);
+  return allowedOrigins.includes(origin) || isRailwayOrigin(origin);
 }
 
 function setupExpress() {
